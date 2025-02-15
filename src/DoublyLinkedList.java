@@ -59,6 +59,16 @@ public class DoublyLinkedList<T> implements ImplementLists<T> {
         size--;
     }
 
+    // Method to get the size
+    public int getSize(){
+        return size;
+    }
+
+    // Method to tell if the list is empty
+    public boolean isEmpty(){
+        return size == 0;
+    }
+
     // Method to convert the Linked List into a string representation
     public String toString() {
         StringBuilder sb = new StringBuilder();

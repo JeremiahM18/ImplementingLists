@@ -13,41 +13,56 @@ public class ListTester {
         Song song12 = new Song("CASANOVE POSSE", "ALI", 4.00);
         Song song13 = new Song("El Pibe De Mi Barrio", "Dr. Krapula", 2.47);
 
-        // Tester for Array-Based List (not using interface)
-        AList a1 = new AList();
-        System.out.println(a1);
-        a1.addy(song11);
-        a1.addy(song13);
-        a1.addy(song12);
-        a1.addy(song11);
-        System.out.println(a1);
+        testArrayList(song11, song12, song13);
+        testLinkedList(song13, song11, song12);
+        testDoublyLinkedList(song13, song11, song12);
+    }
 
-        a1.remove(1);
-        System.out.println(a1);
+    // Method to test Array-Based list not using Interface
+    private static void testArrayList(Song s1, Song s2, Song s3) {
+        System.out.println("Testing ArrayList");
+        AList a2 = new AList();
+        System.out.println(a2);
 
-        // Using interface reference for SinglyLinkedList
-        ImplementLists<Song> s1 = new SinglyLinkedList<>();
-        System.out.println(s1);
-        s1.addSong(song11);
-        s1.addSong(song13);
-        s1.addSong(song12);
-        s1.addSong(song11);
-        System.out.println(s1);
+        a2.addy(s1);
+        a2.addy(s2);
+        a2.addy(s3);
+        a2.addy(s1);
+        System.out.println(a2);
 
-        s1.removeSong(1);
-        System.out.println(s1);
+        a2.remove(1);
+        System.out.println(a2);
+        System.out.println("End Array-Based Test");
+    }
 
-        // Using interface reference for DoublyLinked List
+    private static void testLinkedList(Song s1, Song s2, Song s3) {
+        System.out.println("Testing SinglyLinkedList");
+       ImplementLists<Song> single2 = new SinglyLinkedList<>();
+        System.out.println(single2);
+
+        single2.addSong(s1);
+        single2.addSong(s2);
+        single2.addSong(s3);
+        single2.addSong(s1);
+        System.out.println(single2);
+
+        single2.removeSong(1);
+        System.out.println(single2);
+        System.out.println("End Single Linked-List-Based Test");
+    }
+
+    private static void testDoublyLinkedList(Song s1, Song s2, Song s3) {
         ImplementLists<Song> d1 = new DoublyLinkedList<>();
         System.out.println(d1);
-        d1.addSong(song11);
-        d1.addSong(song13);
-        d1.addSong(song12);
-        d1.addSong(song11);
+        d1.addSong(s1);
+        d1.addSong(s3);
+        d1.addSong(s2);
+        d1.addSong(s1);
         System.out.println(d1);
 
         d1.removeSong(1);
         System.out.println(d1);
+        System.out.println("End Doubly Linked-List-Based Test");
     }
 }
 

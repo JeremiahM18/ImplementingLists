@@ -41,6 +41,11 @@ public class AList {
         genArray = temp;
     }
 
+    // Method to get the size of array
+    public int getSize(){
+        return size;
+    }
+
     // Method to return a string representation of all elements in the list
     public String toString() {
         StringBuilder str = new StringBuilder();

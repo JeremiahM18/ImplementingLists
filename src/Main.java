@@ -36,5 +36,24 @@ public class Main {
         System.out.println(aList);
         System.out.println(sList);
         System.out.println(dList);
+
+        // Empty the entire lists
+        for(int x = aList.getSize() -1; x >= 0; x--) {
+            aList.remove(x);
+        }
+        System.out.println("Is list empty? " + aList.getSize());
+        System.out.println(aList);
+
+        for(int j = sList.getSize() - 1; j >= 0; j--) {
+            sList.removeSong(j);
+        }
+        System.out.println("Is list empty? " + sList.isEmpty());
+        System.out.println(sList);
+
+        for(int k = dList.getSize() - 1; k >= 0; k--) {
+            dList.removeSong(k);
+        }
+        System.out.println("Is list empty? " + dList.isEmpty());
+        System.out.println(dList) ;
     }
 }
