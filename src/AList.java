@@ -46,6 +46,11 @@ public class AList {
         return size;
     }
 
+    // Method to see if the array is empty
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
     // Method to return a string representation of all elements in the list
     public String toString() {
         StringBuilder str = new StringBuilder();

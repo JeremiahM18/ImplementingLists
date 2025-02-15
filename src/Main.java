@@ -41,7 +41,7 @@ public class Main {
         for(int x = aList.getSize() -1; x >= 0; x--) {
             aList.remove(x);
         }
-        System.out.println("Is list empty? " + aList.getSize());
+        System.out.println("Is list empty? " + aList.isEmpty());
         System.out.println(aList);
 
         for(int j = sList.getSize() - 1; j >= 0; j--) {
