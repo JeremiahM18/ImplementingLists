@@ -1,12 +1,12 @@
+/*
+ * Node class for Singly Linked List
+ */
 public class SLNode<T> {
+    T data;
+    SLNode<T> next;
 
-    public SLNode next;
-
-    public Object data;
-
-
-    public SLNode(T nod){
-        data = nod;
+    public SLNode(T obj) {
+        data = obj;
         next = null;
     }
 

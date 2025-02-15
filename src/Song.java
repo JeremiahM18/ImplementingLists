@@ -1,3 +1,7 @@
+/*
+ * Class representing a song with name, artist and length
+ */
+
 public class Song {
 
     public String name;

@@ -1,33 +1,25 @@
-public class SinglyLinkedList <T> {
+/*
+ * Singly Linked List for storing any type of object
+ */
+public class SinglyLinkedList<T> implements ImplementLists<T> {
 
-    private T[] sList;
     private int size;
-    //private Node head;
+    SLNode<T> head;
 
-        Node(Song d) {
-            data = d;
-            next = null;
-        }
-    }
-
+    // Constructor initializes and empty list
     public SinglyLinkedList() {
         head = null;
         size = 0;
-    }
-
-    public SinglyLinkedList(T[] a) {
-        head = null;
-        size = a.length;
-        sList = a;
 
     }
 
-    public void addSong(Song p) {
-        Node newNode = new Node(p);
+    // Method to add element to the end of the list
+    public void addSong(T p) {
+        SLNode<T> newNode = new SLNode<>(p);
         if (head == null) {
             head = newNode;
         } else {
-            Node current = head;
+            SLNode<T> current = head;
             while (current.next != null) {
                 current = current.next;
             }
@@ -36,6 +28,7 @@ public class SinglyLinkedList <T> {
         size++;
     }
 
+    // Method to remove element at a given position
     public void removeSong(int position) {
         if (position < 0 || position >= size) {
             System.out.println("Invalid position");
@@ -44,7 +37,7 @@ public class SinglyLinkedList <T> {
         if (position == 0) {
             head = head.next;
         } else {
-            Node current = head;
+            SLNode<T> current = head;
             for (int i = 0; i < position - 1; i++) {
                 current = current.next;
             }
@@ -53,9 +46,10 @@ public class SinglyLinkedList <T> {
         size--;
     }
 
+    // Method to convert the Linked List into a string representation
     public String toString() {
         StringBuilder str = new StringBuilder();
-        Node current = head;
+        SLNode current = head;
         while (current != null) {
             str.append(current.data.toString()).append("\n");
             current = current.next;
